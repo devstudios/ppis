@@ -1,0 +1,24 @@
+{
+  "name": "internet",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/internet"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.3",
+    "cookie-parser": "^1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "mongoose": "^5.5.9",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0"
+  }
+}
