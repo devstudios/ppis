@@ -3,13 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/internet"
+    "start": "node ./bin/internet",
+    "serve": "nodemon ./bin/internet"
   },
   "dependencies": {
+    "africastalking": "^0.4.0",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.4",
+    "csurf": "^1.10.0",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-handlebars": "^3.1.0",
@@ -19,6 +23,7 @@
     "http-errors": "~1.6.2",
     "mongoose": "^5.5.9",
     "morgan": "~1.9.0",
-    "passport": "^0.4.0"
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }

@@ -150,3 +150,30 @@ exports.upgradeUserController = (req, res, next) => {
 exports.signUpController = (req, res, next) => {
 
 }
+
+exports.smsUserController = (req, res, next) => {
+    const options = {
+        apiKey: '8443994374ed39234cf04ad28a404b5cd896a02687c9f4ec384b5b3baef82340',  // use your sandbox app API key for development in the test environment
+        username: 'sandbox', // use 'sandbox' for development in the test environment
+    };
+    const AfricasTalking = require('africastalking')(options);
+
+    // Initialize a service e.g. SMS
+    sms = AfricasTalking.SMS
+
+    // Use the service
+    let ops = {
+        to: ['+254715793228', '+254786750730'],
+        message: "I'm a lumberjack and its ok, I work all night and sleep all day"
+    }
+
+    // Send message and capture the response or error
+    sms.send(ops)
+        .then(response => {
+            console.log(response);
+            res.send(response);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}

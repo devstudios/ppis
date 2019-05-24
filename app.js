@@ -12,13 +12,13 @@ const flash = require('connect-flash');
 const validator = require('express-validator');
 const MongoStore = require('connect-mongo')(session);
 
-mongoose.connect('mongodb:localhost:27017/internet');
+mongoose.connect('mongodb://localhost/internet', { useNewUrlParser: true });
 require('./config/passport');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs' }));
@@ -42,7 +42,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
